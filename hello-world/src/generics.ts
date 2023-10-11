@@ -39,19 +39,21 @@ function fetch<T>(url: string): IResults<T> {
 	return { data: null, error: null };
 }
 
-let result = fetch<IProduct>('url');
+let result = fetch<IUser>('url');
 //result.data?.username;
-result.data?.title;
+result.data!.username;
 
 /* Generic Constraints */
 function echo1<T extends number | string>(value: T): T {
 	return value;
 }
 
+// constraint by an Object
 function echo2<T extends { name: string }>(value: T): T {
 	return value;
 }
 
+// constraint by an Interface
 function echo3<T extends IProduct>(value: T): T {
 	return value;
 }
@@ -59,6 +61,8 @@ function echo3<T extends IProduct>(value: T): T {
 class PersonClass {
 	constructor(public id: number) {}
 }
+
+// constraint by an Class
 function echo4<T extends PersonClass>(value: T): T {
 	return value;
 }
@@ -106,7 +110,7 @@ class ProductStore extends Store<IProduct> {
 		return [];
 	}
 }
-
+// keyOf operator
 let store = new Store<IProduct2>();
 store.addToStore({ name: 'a', price: 1 });
 store.findStore('name', 'a');
