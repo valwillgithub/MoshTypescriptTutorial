@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "ts-node ./src/ClassExercises.ts",
+		"test": "ts-node ./src/GenericExercises.ts",
 		"test1": "ts-node",
 		"tsnode": "ts-node",
 		"val": "tsc && node src/codility.ts"

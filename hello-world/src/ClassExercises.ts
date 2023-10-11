@@ -1,10 +1,11 @@
 class Logger1 {
   constructor(public filename: string) {}
 
-  writeToFile() {
-    console.log('Writing to file => ', this.filename);
-  }
-}
+
+	writeToFile() {
+		console.log('Merge conflict resolved: Writing to file => ', this.filename);
+	}
+
 
 let log1 = new Logger1('longfile.txt');
 log1.writeToFile();
@@ -17,7 +18,26 @@ class Person2 {
   }
 }
 
-let person2 = new Person2('Valmond', 'Desktop');
+let person2 = new Person2('Merged', 'Conflict');
+
 console.log(person2.fullName);
 
-class Employee2 extends Person2 {}
+class Employee2 extends Person2 {
+	constructor(public salary: number, firstName: string, lastName: string) {
+		super(firstName, lastName);
+	}
+}
+
+let emp = new Employee2(3000, 'Willi', 'Wonker');
+console.log('emp', emp);
+interface IAdress {
+	street: string;
+	cirty: string;
+	zipCode: number;
+}
+
+interface IEmployee {
+	name: string;
+	salary: number;
+	address: IAdress;
+}
