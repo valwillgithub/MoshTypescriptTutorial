@@ -1,18 +1,20 @@
 {
-	"name": "hello-world",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "ts-node ./src/GenericExercises.ts",
-		"test1": "ts-node",
-		"tsnode": "ts-node",
-		"val": "tsc && node src/codility.ts"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"ts-node": "^10.9.1"
-	}
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ts-node ./src/ModuleImport.ts",
+    "test1": "ts-node",
+    "tsnode": "ts-node",
+    "val": "tsc && node src/codility.ts",
+    "supertest": "mocha ./src/supertestfolder/supertest.ts",
+    "super": "ts-node ./src/supertestfolder/supertest.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
 }

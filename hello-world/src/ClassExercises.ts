@@ -40,3 +40,35 @@ interface IEmployee {
   salary: number;
   address: IAdress;
 }
+
+abstract class GeometricShape {
+  abstract calculateArea(): number;
+}
+class CalculateCircleArea extends GeometricShape {
+  constructor(public radius: number) {
+    super();
+  }
+
+  override calculateArea(): number {
+    const pi = Math.PI;
+    const area = pi * Math.pow(this.radius, 2);
+    return area;
+  }
+}
+
+let getRadius = new CalculateCircleArea(15);
+console.log('radius is ', getRadius.calculateArea());
+
+class CalculateTrianleArea extends GeometricShape {
+  constructor(private h: number, private b: number) {
+    super();
+  }
+
+  override calculateArea(): number {
+    const area = (this.h * this.b) / 2;
+    return area;
+  }
+}
+
+let myTriangle = new CalculateTrianleArea(200, 100);
+console.log('Triangle Area is: ', myTriangle.calculateArea());
